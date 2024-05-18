@@ -25,8 +25,7 @@ function EmployeeList() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Contact Number</th>
             <th>Address</th>
@@ -41,8 +40,7 @@ function EmployeeList() {
           {employees.map((employee) => (
             <tr key={employee.id}>
               <td>{employee.id}</td>
-              <td>{employee.first_name}</td>
-              <td>{employee.last_name}</td>
+              <td>{employee.full_name}</td>
               <td>{employee.email}</td>
               <td>{employee.contact_number}</td>
               <td>{employee.address}</td>
