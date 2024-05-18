@@ -21,7 +21,7 @@ function EmployeeList() {
   return (
     <div>
       <h1>Employee List</h1>
-      <table>
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>ID</th>
@@ -38,7 +38,7 @@ function EmployeeList() {
           </tr>
         </thead>
         <tbody>
-          {employees.map(employee => (
+          {employees.map((employee) => (
             <tr key={employee.id}>
               <td>{employee.id}</td>
               <td>{employee.first_name}</td>
