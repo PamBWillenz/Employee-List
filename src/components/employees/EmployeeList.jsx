@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import EmployeeRow from "./EmployeeRow";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -38,18 +39,7 @@ function EmployeeList() {
         </thead>
         <tbody>
           {employees.map((employee) => (
-            <tr key={employee.id}>
-              <td>{employee.id}</td>
-              <td>{employee.full_name}</td>
-              <td>{employee.email}</td>
-              <td>{employee.contact_number}</td>
-              <td>{employee.address}</td>
-              <td>{employee.pincode}</td>
-              <td>{employee.city}</td>
-              <td>{employee.state}</td>
-              <td>{employee.date_of_birth}</td>
-              <td>{employee.date_of_hiring}</td>
-            </tr>
+            <EmployeeRow key={employee.id} employee={employee} />
           ))}
         </tbody>
       </table>
