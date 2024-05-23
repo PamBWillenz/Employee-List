@@ -25,16 +25,9 @@ function EmployeeList() {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Contact Number</th>
-            <th>Address</th>
-            <th>Pincode</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Date of Birth</th>
-            <th>Date of Hiring</th>
+            <th colSpan="3">Actions</th>
           </tr>
         </thead>
         <tbody>
