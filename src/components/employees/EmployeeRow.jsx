@@ -10,6 +10,9 @@ function EmployeeRow({ employee }) {
         <Link to={`/employee/${employee.id}`} className="btn btn-primary">
           View
         </Link>
+        <Link to={`/employee/${employee.id}/edit`} className="btn btn-primary">
+          Edit
+        </Link>
       </td>
     </tr>
   );
