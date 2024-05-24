@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeRow from "./EmployeeRow";
+import { Link } from "react-router-dom";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -22,6 +23,9 @@ function EmployeeList() {
   return (
     <div>
       <h1>Employee List</h1>
+      <Link to={`/employee/new`} className="btn btn-primary">
+        Create New Employee
+      </Link>
       <table className="table table-bordered">
         <thead>
           <tr>
