@@ -63,10 +63,10 @@ function EmployeeDetails() {
                   <strong>Date of Hiring:</strong> {employee.date_of_hiring}
                 </p>
               </div>
+              <Link to={"/"} className="btn btn-primary">
+                Employee List
+              </Link>
             </div>
-            <Link to={"/"} className="btn btn-primary">
-              Employee List
-            </Link>
           </div>
         </div>
       </div>

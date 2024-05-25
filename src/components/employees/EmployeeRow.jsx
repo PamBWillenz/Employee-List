@@ -7,7 +7,7 @@ function EmployeeRow({ employee }) {
       <td>{employee.full_name}</td>
       <td>{employee.email}</td>
       <td>
-        <Link to={`/employee/${employee.id}`} className="btn btn-primary">
+        <Link to={`/employee/${employee.id}`} className="btn btn-primary me-2">
           View
         </Link>
         <Link to={`/employee/${employee.id}/edit`} className="btn btn-primary">
