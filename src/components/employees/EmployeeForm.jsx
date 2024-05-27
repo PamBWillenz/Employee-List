@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EmployeeForm = ({
   formData,
@@ -160,6 +161,9 @@ const EmployeeForm = ({
                 <button type="submit" className="btn btn-primary mt-4">
                   {submitButtonTitle}
                 </button>
+                <Link to={"/"} className="btn btn-primary mt-4 ms-2">
+                  Back
+                </Link>
               </form>
             </div>
           </div>

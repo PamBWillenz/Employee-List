@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
+  const handleDelete = (deletedId) => {
+    setEmployees(employees.filter((employee) => employee.id !== deletedId));
+  };
+
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
@@ -36,7 +40,11 @@ function EmployeeList() {
         </thead>
         <tbody>
           {employees.map((employee) => (
-            <EmployeeRow key={employee.id} employee={employee} />
+            <EmployeeRow
+              key={employee.id}
+              employee={employee}
+              onDelete={handleDelete}
+            />
           ))}
         </tbody>
       </table>
