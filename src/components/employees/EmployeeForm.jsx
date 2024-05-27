@@ -7,6 +7,7 @@ const EmployeeForm = ({
   handleSubmit,
   formTitle,
   submitButtonTitle,
+  errors,
 }) => {
   return (
     <div className="container">
@@ -30,6 +31,13 @@ const EmployeeForm = ({
                         value={formData.first_name}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.first_name &&
+                        errors.first_name.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -43,6 +51,13 @@ const EmployeeForm = ({
                         value={formData.last_name}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.last_name &&
+                        errors.last_name.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -58,6 +73,13 @@ const EmployeeForm = ({
                         value={formData.email}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.email &&
+                        errors.email.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -71,6 +93,13 @@ const EmployeeForm = ({
                         value={formData.contact_number}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.contact_number &&
+                        errors.contact_number.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -86,6 +115,14 @@ const EmployeeForm = ({
                         value={formData.address}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.address &&
+                        errors.address.map((error) => (
+                          <span key={error} className="text-danger">
+                            {" "}
+                            {error}{" "}
+                          </span>
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -99,6 +136,13 @@ const EmployeeForm = ({
                         value={formData.pincode}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.pincode &&
+                        errors.pincode.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -114,6 +158,13 @@ const EmployeeForm = ({
                         value={formData.city}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.city &&
+                        errors.city.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -127,6 +178,13 @@ const EmployeeForm = ({
                         value={formData.state}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.state &&
+                        errors.state.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -142,6 +200,13 @@ const EmployeeForm = ({
                         value={formData.date_of_birth}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.date_of_birth &&
+                        errors.date_of_birth.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -155,6 +220,13 @@ const EmployeeForm = ({
                         value={formData.date_of_hiring}
                         onChange={handleChange}
                       />
+                      {errors &&
+                        errors.date_of_hiring &&
+                        errors.date_of_hiring.map((error) => (
+                          <span key={error} className="text-danger">
+                            {error}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </div>

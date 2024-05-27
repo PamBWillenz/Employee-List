@@ -3,6 +3,7 @@ import axios from "axios";
 import EmployeeForm from "./EmployeeForm";
 
 function EmployeeNewForm() {
+  const [errors, setErrors] = useState([]);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -42,7 +43,12 @@ function EmployeeNewForm() {
         date_of_hiring: "",
       }); // Clear the form
     } catch (error) {
-      console.log("Error creating employee:", error);
+      if (error.response && error.response.data) {
+        setErrors(error.response.data);
+        console.log(errors);
+      } else {
+        console.error("Error:", error);
+      }
     }
   };
 
@@ -53,6 +59,7 @@ function EmployeeNewForm() {
       handleSubmit={handleSubmit}
       handleChange={handleChange}
       submitButtonTitle={"Create Employee"}
+      errors={errors}
     />
   );
 }
