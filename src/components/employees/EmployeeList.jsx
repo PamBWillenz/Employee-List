@@ -2,9 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeRow from "./EmployeeRow";
 import { Link } from "react-router-dom";
+import Pagination from "../shared/Pagination";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 10;
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
 
   const handleDelete = (deletedId) => {
     setEmployees(employees.filter((employee) => employee.id !== deletedId));
@@ -24,6 +31,11 @@ function EmployeeList() {
     fetchEmployees();
   }, []);
 
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const displayedEmployees = employees.slice(startIndex, endIndex);
+
   return (
     <div>
       <h1>Employee List</h1>
@@ -39,7 +51,7 @@ function EmployeeList() {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
+          {displayedEmployees.map((employee) => (
             <EmployeeRow
               key={employee.id}
               employee={employee}
@@ -48,6 +60,10 @@ function EmployeeList() {
           ))}
         </tbody>
       </table>
+      <Pagination
+        pageCount={Math.ceil(employees.length / itemsPerPage)}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
