@@ -13,6 +13,7 @@ function EmployeeRow({ employee, onDelete }) {
           `http://localhost:3000/api/v1/employees/${employee.id}`
         );
         onDelete(employee.id);
+        window.location.href = "/?success=true&action=deleted";
       } catch (error) {
         console.error("Error deleting employee:", error);
       }

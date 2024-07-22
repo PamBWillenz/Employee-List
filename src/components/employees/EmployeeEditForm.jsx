@@ -45,6 +45,7 @@ const EmployeeEditForm = () => {
         formData
       );
       console.log(response.data);
+      window.location.href = "/?success=true&action=updated";
     } catch (error) {
       console.log("Error updating employee:", error);
     }

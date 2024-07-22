@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import EmployeeRow from "./EmployeeRow";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import EmployeeRow from "./EmployeeRow";
 import Pagination from "../shared/Pagination";
+import FlashMessage from "../shared/FlashMessage";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const success = searchParams.get("success");
+  const action = searchParams.get("action");
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -42,6 +49,11 @@ function EmployeeList() {
       <Link to={`/employee/new`} className="btn btn-primary">
         Create New Employee
       </Link>
+      <FlashMessage
+        success={success}
+        objectClass={"Employee"}
+        action={action}
+      />
       <table className="table table-bordered">
         <thead>
           <tr>

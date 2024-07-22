@@ -29,6 +29,7 @@ function EmployeeNewForm() {
         formData
       );
       console.log(response.data);
+      window.location.href = "/?success=true&action=created";
 
       setFormData({
         first_name: "",
